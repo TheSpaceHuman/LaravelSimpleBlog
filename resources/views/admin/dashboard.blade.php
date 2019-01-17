@@ -10,10 +10,10 @@
         <li> <a class="waves-effect waves-dark" href="#"><i class="mdi mdi-clipboard-text"></i><span
                         class="hide-menu">Post</span></a>
         </li>
-        <li> <a class="waves-effect waves-dark" href="/admin/category"><i class="mdi mdi-cards-variant"></i><span
+        <li> <a class="waves-effect waves-dark" href="{{route('category.index')}}"><i class="mdi mdi-cards-variant"></i><span
                         class="hide-menu">Category</span></a>
         </li>
-        <li> <a class="waves-effect waves-dark" href="#"><i class="mdi mdi-tag"></i><span
+        <li> <a class="waves-effect waves-dark" href="{{route('tags.index')}}"><i class="mdi mdi-tag"></i><span
                         class="hide-menu">Tags</span></a>
         </li>
         <li> <a class="waves-effect waves-dark" href="#"><i class="mdi mdi-message-processing"></i><span
