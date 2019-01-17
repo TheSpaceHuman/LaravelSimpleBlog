@@ -13,9 +13,21 @@
     <title>Material Pro Admin Template - The Most Complete & Trusted Bootstrap 4 Admin Template</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700">
     <link rel="stylesheet" href="/css/admin.css">
+    <base href="/">
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
+    <style>
+        .btn-reset {
+            background-color: transparent;
+            border-radius: 0;
+            border: none;
+            display: block;
+        }
+        .text-nowrap form {
+            display: inline-block;
+        }
+    </style>
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">

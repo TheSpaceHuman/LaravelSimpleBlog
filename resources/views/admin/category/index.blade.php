@@ -61,8 +61,8 @@
                         <table class="table table-bordered">
                             <thead>
                             <tr>
+                                <th>ID</th>
                                 <th>Title</th>
-                                <th>Created</th>
                                 <th class="text-nowrap">Action</th>
                             </tr>
                             </thead>
@@ -72,8 +72,13 @@
                                         <td>{{$category->id}}</td>
                                         <td>{{$category->title}}</td>
                                         <td class="text-nowrap">
-                                            <a href="#" data-toggle="tooltip" data-original-title="Edit"> <i class="fas fa-pencil-alt text-inverse m-r-10"></i> </a>
-                                            <a href="#" data-toggle="tooltip" data-original-title="Close"> <i class="fas fa-window-close text-danger"></i> </a>
+                                            <a href="{{route('category.edit', $category)}}" data-toggle="tooltip" data-original-title="Edit"> <i class="fas fa-pencil-alt text-inverse m-r-10"></i> </a>
+
+                                            {!! Form::open(['route' => ['category.destroy', $category->id], 'method' => 'delete']) !!}
+                                            <button type="submit" class="btn-reset" onclick="return confirm('Вы уверены?')">
+                                                <a href="#" data-toggle="tooltip" data-original-title="Delete"> <i class="fas fa-window-close text-danger"></i> </a>
+                                            </button>
+                                            {!! Form::close() !!}
                                         </td>
                                     </tr>
                                 @endforeach

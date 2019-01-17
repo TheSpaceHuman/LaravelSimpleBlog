@@ -20,6 +20,7 @@ Route::get('/home', 'HomeController@index')->name('home');*/
 Route::get('/', function () {
   return view('welcome');
 });
-
-Route::get('/admin', 'Admin\DashboardController@index');
-Route::resource('/admin/category', 'Admin\CategoryController');
+Route::group(['prefix'=>'admin', 'namespace'=>'Admin'], function (){
+  Route::get('/', 'DashboardController@index');
+  Route::resource('/category', 'CategoryController');
+});
