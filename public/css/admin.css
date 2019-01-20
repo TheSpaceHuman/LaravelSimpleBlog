@@ -14629,6 +14629,25 @@ input[type=checkbox]:not(:disabled).tabbed:focus ~ .lever::after {
     .switch label input[type=checkbox]:checked + .lever.switch-col-white:after {
       background-color: #ffffff; }
 
+  /*My style*/
+.photo-in-table {
+  width: 55px;
+  border-radius: 100%;
+  /* margin: 0 auto; */
+  display: block;
+}
+td.text-nowrap > form,
+td.text-nowrap > a,
+td.text-nowrap > button
+{
+  display: inline-block;
+}
+.btn-reset {
+  background-color: transparent;
+  border-radius: 0;
+  border: none;
+  display: block;
+}
 /*
 Template Name: Material Pro Admin
 Author: Themedesigner

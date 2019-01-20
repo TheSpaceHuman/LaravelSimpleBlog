@@ -147,8 +147,8 @@
 
       // Check to see if the tag exists in its raw or uri-encoded form
       var optionExists = (
-        $('option[value="' + encodeURIComponent(itemValue) + '"]', self.$element).length ||
-        $('option[value="' + htmlEncode(itemValue) + '"]', self.$element).length
+          $('option[value="' + encodeURIComponent(itemValue) + '"]', self.$element).length ||
+          $('option[value="' + htmlEncode(itemValue) + '"]', self.$element).length
       );
 
       // add <option /> if item represents a value not present in one of the <select />'s options
@@ -244,17 +244,17 @@
             itemText = self.options.itemText(item),
             tagClass = self.options.tagClass(item);
 
-          // Update tag's class and inner text
-          $tag.attr('class', null);
-          $tag.addClass('badge ' + htmlEncode(tagClass));
-          $tag.contents().filter(function() {
-            return this.nodeType == 3;
-          })[0].nodeValue = htmlEncode(itemText);
+        // Update tag's class and inner text
+        $tag.attr('class', null);
+        $tag.addClass('badge ' + htmlEncode(tagClass));
+        $tag.contents().filter(function() {
+          return this.nodeType == 3;
+        })[0].nodeValue = htmlEncode(itemText);
 
-          if (self.isSelect) {
-            var option = $('option', self.$element).filter(function() { return $(this).data('item') === item; });
-            option.attr('value', itemValue);
-          }
+        if (self.isSelect) {
+          var option = $('option', self.$element).filter(function() { return $(this).data('item') === item; });
+          option.attr('value', itemValue);
+        }
       });
     },
 
@@ -328,7 +328,7 @@
             } else {
               // support for functions and jquery promises
               $.when(data)
-               .then(processItems);
+                  .then(processItems);
             }
           },
           updater: function (text) {
@@ -353,7 +353,7 @@
         // Determine if main configurations were passed or simply a dataset
         var typeaheadjs = self.options.typeaheadjs;
         if (!$.isArray(typeaheadjs)) {
-            typeaheadjs = [null, typeaheadjs];
+          typeaheadjs = [null, typeaheadjs];
         }
 
         $.fn.typeahead.apply(self.$input, typeaheadjs).on('typeahead:selected', $.proxy(function (obj, datum, name) {
@@ -384,16 +384,16 @@
         self.$input.focus();
       }, self));
 
-        if (self.options.addOnBlur && self.options.freeInput) {
-          self.$input.on('focusout', $.proxy(function(event) {
-              // HACK: only process on focusout when no typeahead opened, to
-              //       avoid adding the typeahead text as tag
-              if ($('.typeahead, .twitter-typeahead', self.$container).length === 0) {
-                self.add(self.$input.val());
-                self.$input.val('');
-              }
-          }, self));
-        }
+      if (self.options.addOnBlur && self.options.freeInput) {
+        self.$input.on('focusout', $.proxy(function(event) {
+          // HACK: only process on focusout when no typeahead opened, to
+          //       avoid adding the typeahead text as tag
+          if ($('.typeahead, .twitter-typeahead', self.$container).length === 0) {
+            self.add(self.$input.val());
+            self.$input.val('');
+          }
+        }, self));
+      }
 
       // Toggle the 'focus' css class on the container when it has focus
       self.$container.on({
@@ -415,7 +415,7 @@
         }
 
         switch (event.which) {
-          // BACKSPACE
+            // BACKSPACE
           case 8:
             if (doGetCaretPosition($input[0]) === 0) {
               var prev = $inputWrapper.prev();
@@ -425,7 +425,7 @@
             }
             break;
 
-          // DELETE
+            // DELETE
           case 46:
             if (doGetCaretPosition($input[0]) === 0) {
               var next = $inputWrapper.next();
@@ -435,7 +435,7 @@
             }
             break;
 
-          // LEFT ARROW
+            // LEFT ARROW
           case 37:
             // Try to move the input before the previous tag
             var $prevTag = $inputWrapper.prev();
@@ -444,7 +444,7 @@
               $input.focus();
             }
             break;
-          // RIGHT ARROW
+            // RIGHT ARROW
           case 39:
             // Try to move the input after the next tag
             var $nextTag = $inputWrapper.next();
@@ -453,9 +453,9 @@
               $input.focus();
             }
             break;
-         default:
-             // ignore
-         }
+          default:
+            // ignore
+        }
 
         // Reset internal input's size
         var textLength = $input.val().length,
@@ -465,33 +465,33 @@
       }, self));
 
       self.$container.on('keypress', 'input', $.proxy(function(event) {
-         var $input = $(event.target);
+        var $input = $(event.target);
 
-         if (self.$element.attr('disabled')) {
-            self.$input.attr('disabled', 'disabled');
-            return;
-         }
+        if (self.$element.attr('disabled')) {
+          self.$input.attr('disabled', 'disabled');
+          return;
+        }
 
-         var text = $input.val(),
-         maxLengthReached = self.options.maxChars && text.length >= self.options.maxChars;
-         if (self.options.freeInput && (keyCombinationInList(event, self.options.confirmKeys) || maxLengthReached)) {
-            // Only attempt to add a tag if there is data in the field
-            if (text.length !== 0) {
-               self.add(maxLengthReached ? text.substr(0, self.options.maxChars) : text);
-               $input.val('');
-            }
+        var text = $input.val(),
+            maxLengthReached = self.options.maxChars && text.length >= self.options.maxChars;
+        if (self.options.freeInput && (keyCombinationInList(event, self.options.confirmKeys) || maxLengthReached)) {
+          // Only attempt to add a tag if there is data in the field
+          if (text.length !== 0) {
+            self.add(maxLengthReached ? text.substr(0, self.options.maxChars) : text);
+            $input.val('');
+          }
 
-            // If the field is empty, let the event triggered fire as usual
-            if (self.options.cancelConfirmKeysOnEmpty === false) {
-                event.preventDefault();
-            }
-         }
+          // If the field is empty, let the event triggered fire as usual
+          if (self.options.cancelConfirmKeysOnEmpty === false) {
+            event.preventDefault();
+          }
+        }
 
-         // Reset internal input's size
-         var textLength = $input.val().length,
+        // Reset internal input's size
+        var textLength = $input.val().length,
             wordSpace = Math.ceil(textLength / 5),
             size = textLength + wordSpace + 1;
-         $input.attr('size', Math.max(this.inputSize, size));
+        $input.attr('size', Math.max(this.inputSize, size));
       }, self));
 
       // Remove icon clicked
@@ -505,7 +505,7 @@
       // Only add existing value as tags when using strings as tags
       if (self.options.itemValue === defaultOptions.itemValue) {
         if (self.$element[0].tagName === 'INPUT') {
-            self.add(self.$element.val());
+          self.add(self.$element.val());
         } else {
           $('option', self.$element).each(function() {
             self.add($(this).attr('value'), true);
@@ -567,29 +567,29 @@
       var tagsinput = $(this).data('tagsinput');
       // Initialize a new tags input
       if (!tagsinput) {
-          tagsinput = new TagsInput(this, arg1);
-          $(this).data('tagsinput', tagsinput);
-          results.push(tagsinput);
+        tagsinput = new TagsInput(this, arg1);
+        $(this).data('tagsinput', tagsinput);
+        results.push(tagsinput);
 
-          if (this.tagName === 'SELECT') {
-              $('option', $(this)).attr('selected', 'selected');
-          }
+        if (this.tagName === 'SELECT') {
+          $('option', $(this)).attr('selected', 'selected');
+        }
 
-          // Init tags from $(this).val()
-          $(this).val($(this).val());
+        // Init tags from $(this).val()
+        $(this).val($(this).val());
       } else if (!arg1 && !arg2) {
-          // tagsinput already exists
-          // no function, trying to init
-          results.push(tagsinput);
+        // tagsinput already exists
+        // no function, trying to init
+        results.push(tagsinput);
       } else if(tagsinput[arg1] !== undefined) {
-          // Invoke function on existing tags input
-            if(tagsinput[arg1].length === 3 && arg3 !== undefined){
-               var retVal = tagsinput[arg1](arg2, null, arg3);
-            }else{
-               var retVal = tagsinput[arg1](arg2);
-            }
-          if (retVal !== undefined)
-              results.push(retVal);
+        // Invoke function on existing tags input
+        if(tagsinput[arg1].length === 3 && arg3 !== undefined){
+          var retVal = tagsinput[arg1](arg2, null, arg3);
+        }else{
+          var retVal = tagsinput[arg1](arg2);
+        }
+        if (retVal !== undefined)
+          results.push(retVal);
       }
     });
 
@@ -650,32 +650,32 @@
   }
 
   /**
-    * Returns boolean indicates whether user has pressed an expected key combination.
-    * @param object keyPressEvent: JavaScript event object, refer
-    *     http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
-    * @param object lookupList: expected key combinations, as in:
-    *     [13, {which: 188, shiftKey: true}]
-    */
+   * Returns boolean indicates whether user has pressed an expected key combination.
+   * @param object keyPressEvent: JavaScript event object, refer
+   *     http://www.w3.org/TR/2003/WD-DOM-Level-3-Events-20030331/ecma-script-binding.html
+   * @param object lookupList: expected key combinations, as in:
+   *     [13, {which: 188, shiftKey: true}]
+   */
   function keyCombinationInList(keyPressEvent, lookupList) {
-      var found = false;
-      $.each(lookupList, function (index, keyCombination) {
-          if (typeof (keyCombination) === 'number' && keyPressEvent.which === keyCombination) {
-              found = true;
-              return false;
-          }
+    var found = false;
+    $.each(lookupList, function (index, keyCombination) {
+      if (typeof (keyCombination) === 'number' && keyPressEvent.which === keyCombination) {
+        found = true;
+        return false;
+      }
 
-          if (keyPressEvent.which === keyCombination.which) {
-              var alt = !keyCombination.hasOwnProperty('altKey') || keyPressEvent.altKey === keyCombination.altKey,
-                  shift = !keyCombination.hasOwnProperty('shiftKey') || keyPressEvent.shiftKey === keyCombination.shiftKey,
-                  ctrl = !keyCombination.hasOwnProperty('ctrlKey') || keyPressEvent.ctrlKey === keyCombination.ctrlKey;
-              if (alt && shift && ctrl) {
-                  found = true;
-                  return false;
-              }
-          }
-      });
+      if (keyPressEvent.which === keyCombination.which) {
+        var alt = !keyCombination.hasOwnProperty('altKey') || keyPressEvent.altKey === keyCombination.altKey,
+            shift = !keyCombination.hasOwnProperty('shiftKey') || keyPressEvent.shiftKey === keyCombination.shiftKey,
+            ctrl = !keyCombination.hasOwnProperty('ctrlKey') || keyPressEvent.ctrlKey === keyCombination.ctrlKey;
+        if (alt && shift && ctrl) {
+          found = true;
+          return false;
+        }
+      }
+    });
 
-      return found;
+    return found;
   }
 
   /**

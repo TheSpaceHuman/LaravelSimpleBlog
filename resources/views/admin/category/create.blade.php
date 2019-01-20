@@ -1,35 +1,5 @@
 @extends('admin.layout')
 
-@section('sidebar')
-    <nav class="sidebar-nav">
-        <ul id="sidebarnav">
-            <li class="nav-small-cap">BLOG</li>
-            <li> <a class="waves-effect waves-dark " href="/admin"><i class="mdi mdi-gauge"></i><span
-                            class="hide-menu">Dashboard</span></a>
-            </li>
-            <li> <a class="waves-effect waves-dark" href="#"><i class="mdi mdi-clipboard-text"></i><span
-                            class="hide-menu">Post</span></a>
-            </li>
-            <li> <a class="waves-effect waves-dark active" href="{{route('category.index')}}"><i class="mdi mdi-cards-variant"></i><span
-                            class="hide-menu">Category</span></a>
-            </li>
-            <li> <a class="waves-effect waves-dark" href="#"><i class="mdi mdi-tag"></i><span
-                            class="hide-menu">Tags</span></a>
-            </li>
-            <li> <a class="waves-effect waves-dark" href="#"><i class="mdi mdi-message-processing"></i><span
-                            class="hide-menu">Comments</span></a>
-            </li>
-            <li> <a class="waves-effect waves-dark" href="#"><i class="mdi mdi-account"></i><span
-                            class="hide-menu">Users</span></a>
-            </li>
-            <li> <a class="waves-effect waves-dark" href="#"><i class="mdi mdi-bookmark-check"></i><span
-                            class="hide-menu">Subscribers</span></a>
-            </li>
-        </ul>
-    </nav>
-@endsection
-
-
 @section('breadcrumbs')
     <h3 class="text-themecolor m-b-0 m-t-0">Dashboard</h3>
     <ol class="breadcrumb">
@@ -47,17 +17,17 @@
                     <h4 class="card-title">Category</h4>
                     <h6 class="card-subtitle">Page create category</h6>
                     {!! Form::open(['route' => 'category.store']) !!}
-                    <div class="form-material m-t-40">
-                        <div class="form-group">
-                            <label>Title category</label>
-                            <input type="text" class="form-control form-control-line" value="" name="title">
+                        <div class="form-material m-t-40">
+                            <div class="form-group">
+                                <label>Title category</label>
+                                <input type="text" class="form-control form-control-line" value="" name="title">
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="button-group">
-                        <a href="{{route('category.index')}}" class="btn waves-effect waves-light btn-outline-secondary">Back</a>
-                        <button type="submit" class="btn waves-effect waves-light btn-outline-success">Created</button>
-                    </div>
+                        <div class="button-group">
+                            <a href="{{route('category.index')}}" class="btn waves-effect waves-light btn-outline-secondary">Back</a>
+                            <button type="submit" class="btn waves-effect waves-light btn-outline-success">Created</button>
+                        </div>
                     {!! Form::close() !!}
 
                     @include('admin.error')

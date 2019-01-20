@@ -42,13 +42,17 @@ mix.scripts([
 'resources/assets/admin/assets/plugins/sticky-kit-master/dist/sticky-kit.min.js',
 'resources/assets/admin/assets/plugins/sparkline/jquery.sparkline.min.js',
 'resources/assets/admin/assets/js/custom.min.js',
-'resources/assets/admin/assets/plugins/chartist-js/dist/chartist.min.js',
-'resources/assets/admin/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js',
+'resources/assets/admin/assets/js/jasny-bootstrap.js',
+'resources/assets/admin/assets/plugins/datatables/datatables.min.js',
+'resources/assets/admin/assets/js/dataTables.buttons.min.js',
 'resources/assets/admin/assets/plugins/d3/d3.min.js',
 'resources/assets/admin/assets/plugins/c3-master/c3.min.js',
-'resources/assets/admin/assets/js/dashboard1.js',
+// 'resources/assets/admin/assets/js/dashboard1.js',
 'resources/assets/admin/assets/plugins/styleswitcher/jQuery.style.switcher.js',
-'assets/js/tagsinput.js'
+'resources/assets/admin/assets/js/tagsinput.js',
+'resources/assets/admin/assets/js/usedScripts.js'
+// 'resources/assets/admin/assets/plugins/chartist-js/dist/chartist.min.js',
+// 'resources/assets/admin/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js'
     ], 'public/js/admin.js');
 mix.copy([
 'resources/assets/admin/assets/images'

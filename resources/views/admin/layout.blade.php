@@ -18,16 +18,12 @@
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-        .btn-reset {
-            background-color: transparent;
-            border-radius: 0;
-            border: none;
-            display: block;
-        }
+
         .text-nowrap form {
             display: inline-block;
         }
     </style>
+
 </head>
 
 <body class="fix-header fix-sidebar card-no-border">
@@ -150,7 +146,7 @@
             </div>
             <!-- End User profile text-->
             <!-- Sidebar navigation-->
-            @yield('sidebar')
+            @include('admin.partials.sidebar')
 
             <!-- End Sidebar navigation -->
         </div>
@@ -272,6 +268,7 @@
     <!-- ============================================================== -->
 </div>
 <script src="/js/admin.js"></script>
+
 </body>
 
 </html>
