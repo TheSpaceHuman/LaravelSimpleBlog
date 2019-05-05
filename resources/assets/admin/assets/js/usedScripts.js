@@ -43,3 +43,20 @@ $('#example23').DataTable({
     'copy', 'csv', 'excel', 'pdf', 'print'
   ]
 });
+
+
+
+$(document).ready(function() {
+  $('.textarea_editor').wysihtml5();
+});
+
+$(function () {
+  $('.qtagselect__select').tagselect();
+});
+// MAterial Date picker
+$('#mdate').bootstrapMaterialDatePicker({ weekStart: 0, time: false });
+/*
+$('#timepicker').bootstrapMaterialDatePicker({ format: 'HH:mm', time: true, date: false });
+$('#date-format').bootstrapMaterialDatePicker({ format: 'dddd DD MMMM YYYY - HH:mm' });
+
+$('#min-date').bootstrapMaterialDatePicker({ format: 'DD/MM/YYYY HH:mm', minDate: new Date() });*/

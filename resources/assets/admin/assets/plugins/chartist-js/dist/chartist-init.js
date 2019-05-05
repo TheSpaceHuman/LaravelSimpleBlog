@@ -1,5 +1,5 @@
 //Simple line chart 
-
+if ($(document).is('.ct-sm-line-chart')) {
 new Chartist.Line('.ct-sm-line-chart', {
   labels: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
   series: [
@@ -322,3 +322,4 @@ chart.on('created', function() {
   }
   window.__anim21278907124 = setTimeout(chart.update.bind(chart), 10000);
 });
+}

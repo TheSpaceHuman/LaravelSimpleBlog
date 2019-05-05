@@ -4,7 +4,7 @@
         <li> <a class="waves-effect waves-dark" href="{{route('admin')}}"><i class="mdi mdi-gauge"></i><span
                         class="hide-menu">Dashboard</span></a>
         </li>
-        <li> <a class="waves-effect waves-dark" href="#"><i class="mdi mdi-clipboard-text"></i><span
+        <li> <a class="waves-effect waves-dark" href="{{route('posts.index')}}"><i class="mdi mdi-clipboard-text"></i><span
                         class="hide-menu">Post</span></a>
         </li>
         <li> <a class="waves-effect waves-dark " href="{{route('category.index')}}"><i class="mdi mdi-cards-variant"></i><span

@@ -30,7 +30,10 @@ mix.styles([
 'resources/assets/admin/assets/css/spinners.css',
 'resources/assets/admin/assets/css/style.css',
 'resources/assets/admin/assets/css/colors/blue.css',
-'resources/assets/admin/assets/css/tagsinput.css'
+'resources/assets/admin/assets/plugins/html5-editor/bootstrap-wysihtml5.css',
+'resources/assets/admin/assets/css/jquery.tagselect.css',
+'resources/assets/admin/assets/plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css'
+// 'resources/assets/admin/assets/css/tagsinput.css'
 ], 'public/css/admin.css');
 mix.scripts([
 'resources/assets/admin/assets/plugins/jquery/jquery.min.js',
@@ -48,11 +51,18 @@ mix.scripts([
 'resources/assets/admin/assets/plugins/d3/d3.min.js',
 'resources/assets/admin/assets/plugins/c3-master/c3.min.js',
 // 'resources/assets/admin/assets/js/dashboard1.js',
-'resources/assets/admin/assets/plugins/styleswitcher/jQuery.style.switcher.js',
-'resources/assets/admin/assets/js/tagsinput.js',
-'resources/assets/admin/assets/js/usedScripts.js'
+// 'resources/assets/admin/assets/js/tagsinput.js',
+'resources/assets/admin/assets/plugins/html5-editor/wysihtml5-0.3.0.js',
+'resources/assets/admin/assets/plugins/html5-editor/bootstrap-wysihtml5.js',
+'resources/assets/admin/assets/js/usedScripts.js',
+'resources/assets/admin/assets/js/jquery.tagselect.js',
+'resources/assets/admin/assets/plugins/moment/moment.js',
+'resources/assets/admin/assets/plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js',
+'resources/assets/admin/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.min.js',
+
 // 'resources/assets/admin/assets/plugins/chartist-js/dist/chartist.min.js',
 // 'resources/assets/admin/assets/plugins/chartist-plugin-tooltip-master/dist/chartist-plugin-tooltip.min.js'
+  'resources/assets/admin/assets/plugins/styleswitcher/jQuery.style.switcher.js'
     ], 'public/js/admin.js');
 mix.copy([
 'resources/assets/admin/assets/images'
